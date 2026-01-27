@@ -1,0 +1,68 @@
+.navigation {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+
+  display: flex;
+  justify-content: center;
+}
+
+.navContent {
+  max-width: 80rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+}
+
+.navActions,
+.userSection {
+  display: flex;
+  align-items: center;
+}
+
+.navActions {
+  gap: 2rem;
+}
+
+.userSection {
+  gap: 0.5rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.signInButton {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 999px;
+  background: #3a3a81;
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .navigation {
+    padding: 0.75rem 1rem;
+  }
+
+  .navContent {
+    flex-direction: row;
+  }
+
+  .navActions {
+    gap: 1rem;
+  }
+
+  .userSection p {
+    display: none; // hide greeting text
+  }
+}

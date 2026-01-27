@@ -1,0 +1,44 @@
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-top: 1px solid #ababab;
+}
+
+.navButton {
+  background: none;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1b1584;
+  cursor: pointer;
+
+  &:disabled {
+    color: #9ca3af;
+    cursor: not-allowed;
+  }
+}
+
+.pageInfo {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .pagination {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .navButton {
+    font-size: 0.8125rem;
+  }
+
+  .pageInfo {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,77 @@
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.info {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5a5a5a;
+}
+
+.details {
+  display: flex;
+  gap: 1rem;
+}
+
+.detailItem {
+  width: 6.25rem;
+  padding: 12px;
+  border-radius: 0.625rem;
+  text-align: center;
+  line-height: 24px;
+  border: 1px solid #ababab;
+  background: #fff;
+}
+
+.count {
+  font-weight: 600;
+}
+
+.status {
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.025rem;
+
+  &.confirmed {
+    color: #22c55e;
+  }
+
+  &.pending {
+    color: #eab308;
+  }
+
+  &.declined {
+    color: #c33535;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .details {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .detailItem {
+    width: auto;
+    flex: 1;
+  }
+}

@@ -1,0 +1,42 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 22.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.search {
+  width: 100%;
+  height: 2.625rem;
+  padding: 0 2.25rem;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  background: #fff;
+  font-size: 1rem;
+  outline: none;
+
+  &:focus {
+    border-color: #6366f1;
+  }
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  color: #afafaf;
+}
+
+.clearBtn {
+  position: absolute;
+  right: 10px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #afafaf;
+  cursor: pointer;
+
+  &:hover {
+    color: #374151;
+  }
+}
