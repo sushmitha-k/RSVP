@@ -2,11 +2,8 @@ import { useState } from "react";
 import type { AxiosError } from "axios";
 import toast from "react-hot-toast";
 import { api } from "../utils/axios";
-import {
-  RSVP_SERVICES,
-  type IApiErrorResponse,
-  type UseDeleteGuestOptions,
-} from "./types";
+import { type IApiErrorResponse, type UseDeleteGuestOptions } from "./types";
+import { RSVP_SERVICES } from "./services";
 
 export const useDeleteGuest = (options?: UseDeleteGuestOptions) => {
   const [isDeleting, setIsDeleting] = useState(false);

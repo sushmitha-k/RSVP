@@ -1,9 +1,3 @@
-export const RSVP_SERVICES = {
-  LIST: "/clients",
-  UPDATE: (id: string) => `/clients/${id}`,
-  SEARCH_LIST: "/clients/search",
-};
-
 export interface IGuestPayload {
   id?: string;
   name: string;

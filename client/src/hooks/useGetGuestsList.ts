@@ -3,7 +3,8 @@ import type { AxiosError } from "axios";
 
 import type { IGuest } from "../pages/Home/GuestList/types";
 import { api } from "../utils/axios";
-import { RSVP_SERVICES, type IApiErrorResponse } from "./types";
+import { type IApiErrorResponse } from "./types";
+import { RSVP_SERVICES } from "./services";
 
 export const useGetGuestsList = () => {
   const [guests, setGuests] = useState<IGuest[]>([]);

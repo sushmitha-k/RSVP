@@ -3,11 +3,11 @@ import type { AxiosError } from "axios";
 import toast from "react-hot-toast";
 import { api } from "../utils/axios";
 import {
-  RSVP_SERVICES,
   type IApiErrorResponse,
   type IGuestPayload,
   type ISaveGuestOptions,
 } from "./types";
+import { RSVP_SERVICES } from "./services";
 
 export const useSaveGuest = (options?: ISaveGuestOptions) => {
   const [isLoading, setIsLoading] = useState(false);
