@@ -71,7 +71,7 @@ Users can submit their RSVP details, view the guest list, and authorized users c
 ```bash
 cd backend
 npm install
-npm run dev
+npm start
 ```
 
 ### Frontend
