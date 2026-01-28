@@ -4,6 +4,8 @@ import { GuestTable } from "../../../components/Table";
 import { Pagination } from "../../../components/Pagination";
 import { useDeleteGuest } from "../../../hooks/useDeleteGuest";
 import { useGuestContext } from "../../../context";
+import { GuestTableShimmer } from "../../../components/TableShimmer";
+import { useGuestList } from "../../../context/GuestListContext";
 import type { IGuest, IGuestTableProps } from "./types";
 
 import styles from "./index.module.scss";
@@ -15,11 +17,12 @@ export const GuestList = ({ guests, isLoading }: IGuestTableProps) => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [selectedGuest, setSelectedGuest] = useState<IGuest | null>(null);
 
-  const { startEdit, refetchList } = useGuestContext();
+  const { startEdit } = useGuestContext();
+  const { refetch } = useGuestList();
 
   const { isDeleting, deleteGuest } = useDeleteGuest({
     onSuccess: () => {
-      refetchList();
+      refetch();
       setShowDeleteModal(false);
       setSelectedGuest(null);
     },
@@ -35,7 +38,7 @@ export const GuestList = ({ guests, isLoading }: IGuestTableProps) => {
   return (
     <div className={styles.tableWrapper}>
       {isLoading ? (
-        <p>Loading...</p>
+        <GuestTableShimmer />
       ) : (
         <table className={styles.table}>
           <thead className={styles.tableHead}>

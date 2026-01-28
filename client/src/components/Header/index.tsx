@@ -1,11 +1,11 @@
 import { useMemo } from "react";
-import { useGetGuestsList } from "../../hooks/useGetGuestsList";
-import { getTotalsByStatus } from "../../utils";
-import styles from "./index.module.scss";
 import classNames from "classnames";
+import { getTotalsByStatus } from "../../utils";
+import { useGuestList } from "../../context/GuestListContext";
+import styles from "./index.module.scss";
 
 export const Header = () => {
-  const { guests } = useGetGuestsList();
+  const { guests } = useGuestList();
 
   const statusTotals = useMemo(() => {
     return getTotalsByStatus(guests);

@@ -1,31 +1,23 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { Download } from "lucide-react";
-
-import { useGetGuestsList } from "../../../hooks/useGetGuestsList";
+import { useGuestList } from "../../../context/GuestListContext";
 import { useDebounceValue } from "../../../hooks/usedebounceValue";
 import { SearchInput } from "../../../components/Search";
 import { ButtonLoader } from "../../../components/Loader";
 import { GuestList as List } from "./List";
-import { useGuestContext } from "../../../context";
 import { exportToCSV } from "../../../utils";
 
 import styles from "./index.module.scss";
 
 const GuestList = () => {
   const [searchVal, setSearchVal] = useState("");
-  const { guests, isLoading, fetchGuests } = useGetGuestsList();
-
-  const { refetchList } = useGuestContext();
+  const { guests, isLoading, fetchGuests } = useGuestList();
   const debouncedSearch = useDebounceValue(searchVal, 1000);
 
   useEffect(() => {
     fetchGuests(debouncedSearch);
   }, [debouncedSearch]);
-
-  useEffect(() => {
-    fetchGuests();
-  }, [refetchList]);
 
   return (
     <div className={styles.container}>

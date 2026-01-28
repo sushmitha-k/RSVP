@@ -5,19 +5,21 @@ import { ButtonLoader } from "../../../components/Loader";
 import { useGuestContext } from "../../../context";
 import { validateGuestForm } from "../../../utils/form";
 import type { IGuestPayload } from "../../../hooks/types";
+import { useGuestList } from "../../../context/GuestListContext";
 import type { FormErrors } from "./types";
 
 import styles from "./index.module.scss";
 
 const Form = () => {
   const [errors, setErrors] = useState<FormErrors>({});
-  const { editingGuest, clearEdit, refetchList } = useGuestContext();
+  const { editingGuest, clearEdit } = useGuestContext();
+  const { refetch } = useGuestList();
   const formRef = useRef<HTMLFormElement>(null);
 
   const { isLoading, saveGuest } = useSaveGuest({
     onSuccess: () => {
       clearEdit();
-      refetchList();
+      refetch();
       formRef.current?.reset();
     },
   });

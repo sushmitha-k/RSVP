@@ -1,0 +1,93 @@
+@keyframes shimmer {
+  0% {
+    background-position: -200%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 1rem;
+}
+
+tbody tr {
+  border-top: 1px solid #e5e7eb;
+}
+
+.guestCell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--shimmer);
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.line {
+  height: 12px;
+  width: 160px;
+  border-radius: 6px;
+  background: var(--shimmer);
+}
+
+.small {
+  width: 120px;
+  height: 10px;
+}
+
+.medium {
+  width: 80px;
+}
+
+.statusPill {
+  width: 80px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--shimmer);
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.action {
+  width: 40px;
+  height: 12px;
+  border-radius: 6px;
+  background: var(--shimmer);
+}
+
+/* Shared shimmer gradient */
+:root {
+  --shimmer: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 37%, #f1f5f9 63%);
+}
+
+.avatar,
+.line,
+.statusPill,
+.action {
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
