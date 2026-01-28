@@ -2,9 +2,12 @@ import express from "express";
 import cors from "cors";
 import clientRoutes from "./routes/clientRoute.js";
 import redisClient from "./redis.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -18,5 +21,4 @@ app.get("/redis-status", async (_, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  console.log("Redis client is active and caching enabled");
 });
